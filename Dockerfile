@@ -35,3 +35,7 @@ RUN cd /home/grpc && \
     LDXX=arm-linux-gnueabi-g++ \
     AR=arm-linux-gnueabi-ar \
     PROTOBUF_CONFIG_OPTS="--host=arm-linux-gnueabi --with-protoc=/usr/local/bin/protoc" static
+
+RUN git clone -b v1.2.8 https://github.com/madler/zlib /home/zlib/
+
+RUN cd /home/zlib && ./configure && make

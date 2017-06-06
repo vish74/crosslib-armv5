@@ -39,3 +39,9 @@ RUN cd /home/grpc && \
 RUN git clone -b v1.2.8 https://github.com/madler/zlib /home/zlib/
 
 RUN cd /home/zlib && ./configure && make
+
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+
+RUN export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh
+
+RUN nvm install v0.10.40 && nvm install v6.10.2
